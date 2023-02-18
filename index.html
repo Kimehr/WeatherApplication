@@ -15,34 +15,48 @@
     <title>Weather Application</title>
   </head>
   <div class="container">
-    <div class="appwindow">
-      <div class="row">
-        <div class="col-6">
-          <h1>London,UK</h1>
-          <ul>
-            <li>Sunday 22:00</li>
-            <li>Sunrise : 05:36</li>
-            <li>Sunset : 17:45</li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <h2><img src="" alt="" /> 25 °C | °F</h2>
-          <ul>
-            <li>Clear Sky</li>
-            <li>Humidity : 35%</li>
-            <li>Wind : 7 km/h</li>
-            <li>L : 10</li>
-            <li>H: 26</li>
-          </ul>
+    <div class="coderwrapper">
+      <div class="appwindow">
+        <div class="row">
+          <div class="col-6">
+            <h1>London,UK</h1>
+
+            <ul>
+              <li>Sunday 22:00</li>
+              <li>Sunrise : 05:36</li>
+              <li>Sunset : 17:45</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <div class="overview">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  id="icon"
+                />
+                <div>
+                  <strong id="temperature">25</strong>
+                  <span class="units"> °C | <a href="#">°F</a> </span>
+                </div>
+              </div>
+            </div>
+            <ul>
+              <li>Clear Sky</li>
+              <li>Humidity : 35%</li>
+              <li>Wind : 7 km/h</li>
+              <li>L : 10</li>
+              <li>H: 26</li>
+            </ul>
+          </div>
         </div>
       </div>
+      <small
+        >This app is coded by Kimia Mehrbod and is open-sourced on GitHub and
+        hosted on Netlify</small
+      >
     </div>
-    <small
-      >This app is coded by Kimia Mehrbod and is open-sourced on GitHub and
-      hosted on Netlify</small
-    >
   </div>
-
   <body>
     <script src="src/app.js"></script>
   </body>
