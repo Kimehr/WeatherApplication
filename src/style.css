@@ -1,11 +1,14 @@
 body {
-  font-family: cursive;
+  background: url("./images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center;*/
 }
 
 h1 {
-  color: violet;
-  font-size: 24px;
-  font-weight: 100;
+  color: #393e46;
+  font-size: 44px;
+  font-weight: 600;
   line-height: 28px;
   margin-bottom: 60px;
 }
@@ -14,12 +17,14 @@ ul {
   padding: 0;
 }
 li {
+  text-transform: capitalize;
   list-style: none;
-  color: palevioletred;
+  color: gray;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
 }
+
 .coderwrapper {
   max-width: 900px;
   margin: 30px auto;
@@ -28,8 +33,9 @@ li {
   max-width: 900px;
   margin: 30px auto;
   padding: 20px;
-  border: 1.5px solid blueviolet;
+  border: 1.5px solid #dbd8e3;
   border-radius: 5px;
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 .overview {
   margin-bottom: 20px;

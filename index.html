@@ -11,6 +11,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Indie+Flower&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Weather Application</title>
   </head>
@@ -19,7 +26,7 @@
       <div class="appwindow">
         <div class="row">
           <div class="col-6">
-            <h1>London,UK</h1>
+            <h1 id="city">London</h1>
 
             <ul>
               <li>Sunday 22:00</li>
@@ -36,17 +43,17 @@
                   id="icon"
                 />
                 <div>
-                  <strong id="temperature">25</strong>
+                  <strong id="temperature"></strong>
                   <span class="units"> °C | <a href="#">°F</a> </span>
                 </div>
               </div>
             </div>
             <ul>
-              <li>Clear Sky</li>
-              <li>Humidity : 35%</li>
-              <li>Wind : 7 km/h</li>
-              <li>L : 10</li>
-              <li>H: 26</li>
+              <li id="description"></li>
+              <li>Humidity : <span id="humidity"></span> %</li>
+              <li>Wind : <span id="windspeed"></span> km/h</li>
+              <li>H : <span id="temp-max"></span> °C</li>
+              <li>L : <span id="temp-min"></span> °C</li>
             </ul>
           </div>
         </div>
