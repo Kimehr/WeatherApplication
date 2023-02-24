@@ -1,11 +1,55 @@
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes}`;
+}
+function sunDate(timestamp) {
+  let date = new Date(timestamp);
+
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
+
   let descriptElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windspeedElement = document.querySelector("#windspeed");
   let tempmaxElement = document.querySelector("#temp-max");
   let tempminElement = document.querySelector("#temp-min");
+
+  let dateElement = document.querySelector("#date");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
+
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  sunriseElement.innerHTML = sunDate(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = sunDate(response.data.sys.sunset * 1000);
   tempminElement.innerHTML = Math.round(response.data.main.temp_min);
   tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
   windspeedElement.innerHTML = Math.round(response.data.wind.speed);
