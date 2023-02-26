@@ -83,11 +83,15 @@ function showFahrenheitTemp(event) {
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 function showCelsiusTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let celsiusTemperature = null;
