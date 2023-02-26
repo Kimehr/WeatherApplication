@@ -23,9 +23,25 @@
   </head>
   <div class="container">
     <div class="coderwrapper">
+      <form id="cityform">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="Search the city..."
+              class="form-control"
+              autocomplete="off"
+              id="city-input"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="search" class="btn btn-primary w-100" />
+          </div>
+        </div>
+      </form>
       <div class="appwindow">
         <div class="row">
-          <div class="col-6">
+          <div class="col-9">
             <h1 id="city">London</h1>
 
             <ul>
@@ -34,7 +50,7 @@
               <li>Sunset : <span id="sunset">05:36</span></li>
             </ul>
           </div>
-          <div class="col-6">
+          <div class="col-3">
             <div class="overview">
               <div class="d-flex weather-temperature">
                 <img src="" alt="" id="icon" />
