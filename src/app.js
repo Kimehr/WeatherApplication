@@ -47,6 +47,13 @@ function displayTemperature(response) {
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   sunriseElement.innerHTML = sunDate(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = sunDate(response.data.sys.sunset * 1000);
