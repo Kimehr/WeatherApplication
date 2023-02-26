@@ -24,6 +24,10 @@ li {
   font-weight: 100;
   line-height: 19px;
 }
+small {
+  background-color: whitesmoke;
+  color: #393e46;
+}
 
 .coderwrapper {
   max-width: 900px;
