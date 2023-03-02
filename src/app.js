@@ -66,6 +66,7 @@ function displayTemperature(response) {
   descriptElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = Math.round(response.data.main.temp);
+  console.log(response);
 }
 
 function search(city) {

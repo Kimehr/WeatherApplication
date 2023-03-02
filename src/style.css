@@ -38,8 +38,9 @@ small {
   margin: 30px auto;
   padding: 20px;
   border: 1.5px solid #dbd8e3;
-  border-radius: 5px;
-  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
 }
 .overview {
   margin-bottom: 20px;
@@ -69,4 +70,20 @@ a {
 }
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+.weather-forecast-day {
+  font-size: 16px;
+  color: black;
+  opacity: 0.7;
+}
+.forecast-temp {
+  font-size: 13px;
+  color: black;
+}
+.forecast-tempmin {
+  opacity: 0.6;
 }
