@@ -2,7 +2,10 @@ body {
   background: url("./images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center;*/
+  font-family: "Crimson Text", serif;
+}
+.form {
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -24,18 +27,10 @@ li {
   font-weight: 100;
   line-height: 19px;
 }
-small {
-  background-color: whitesmoke;
-  color: #393e46;
-}
 
-.coderwrapper {
-  max-width: 900px;
-  margin: 30px auto;
-}
 .appwindow {
   max-width: 900px;
-  margin: 30px auto;
+  margin: 30px auto 10px auto;
   padding: 20px;
   border: 1.5px solid #dbd8e3;
   border-radius: 20px;
@@ -71,19 +66,59 @@ a {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+hr {
+  border-top: 1.5px dotted #393e46;
+}
+
+.forecast-title {
+  padding: 0;
+}
+.forecast-text {
+  position: relative;
+  bottom: -3px;
+  font-size: 18px;
+  line-height: 1.5px;
+}
+.top-line {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 .weather-forecast {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
+}
+.weather-forecast-part {
+  border: 1px #dbd8e3;
+  border-radius: 8%;
+  color: #d0b8a8;
+  backdrop-filter: blur(1px);
 }
 .weather-forecast-day {
-  font-size: 16px;
-  color: black;
-  opacity: 0.7;
+  font-size: 22px;
+  color: #393e46;
 }
-.forecast-temp {
-  font-size: 13px;
+.weather-forecast-temperature {
+  font-size: 19px;
   color: black;
 }
 .forecast-tempmin {
-  opacity: 0.6;
+  opacity: 0.5;
+}
+.coderwrapper {
+  max-width: 900px;
+  margin: 30px auto;
+}
+small {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: bolder;
+  text-align: center;
+  padding: 4px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #393e46;
+  border: 1.5px solid #393e46;
+  border-radius: 10px;
 }

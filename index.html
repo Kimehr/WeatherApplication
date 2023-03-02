@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Indie+Flower&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Indie+Flower&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Uchen&display=swap"
       rel="stylesheet"
     />
 
@@ -23,23 +23,29 @@
   </head>
   <div class="container">
     <div class="coderwrapper">
-      <form id="cityform">
-        <div class="row">
-          <div class="col-9">
-            <input
-              type="search"
-              placeholder="Search the city..."
-              class="form-control"
-              autocomplete="off"
-              id="city-input"
-            />
-          </div>
-          <div class="col-3">
-            <input type="submit" value="search" class="btn btn-primary w-100" />
-          </div>
-        </div>
-      </form>
       <div class="appwindow">
+        <div class="form">
+          <form id="cityform">
+            <div class="row">
+              <div class="col-4">
+                <input
+                  type="search"
+                  placeholder="Search the city..."
+                  class="form-control"
+                  autocomplete="off"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
         <div class="row">
           <div class="col-9">
             <h1 id="city">London</h1>
@@ -71,16 +77,26 @@
               <li>L : <span id="temp-min"></span> °C</li>
             </ul>
           </div>
-          <hr />
+          <hr class="top-line" />
+          <div class="forecast-title">
+            <img
+              src="https://img.icons8.com/windows/32/null/baby-calendar.png"
+              class="cal-img"
+              alt="calendar"
+              width="26"
+            />
+            <span class="forecast-text">6-DAY FORECAST</span>
+          </div>
+          <hr class="bott-line" />
           <div class="weather-forecast" id="forecast"></div>
         </div>
       </div>
-      <small
-        >This app is coded by Kimia Mehrbod and is open-sourced on
+      <small>
+        This app is coded by Kimia Mehrbod and is Open-sourced on
         <a href="https://github.com/Kimehr/WeatherApplication" target="_blank"
           >GitHub</a
         >
-        and hosted on Netlify</small
+        and hosted on Netlify.</small
       >
     </div>
   </div>
