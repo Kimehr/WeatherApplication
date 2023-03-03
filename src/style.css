@@ -7,25 +7,46 @@ body {
 .form {
   margin-bottom: 30px;
 }
-
+.btn {
+  border: #393e46;
+  background: #393e46;
+}
+.btn:hover {
+  border: #d0b8a8;
+  background: #d0b8a8;
+  color: #393e46;
+  transition: all 200ms linear;
+}
 h1 {
   color: #393e46;
-  font-size: 44px;
+  font-size: 50px;
   font-weight: 600;
   line-height: 28px;
-  margin-bottom: 60px;
+  margin-bottom: 25px;
+}
+.country {
+  font-size: 25px;
 }
 ul {
   margin: 0;
   padding: 0;
 }
 li {
-  text-transform: capitalize;
   list-style: none;
-  color: gray;
+  color: #352f44;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 19px;
+}
+li::first-letter {
+  text-transform: capitalize;
+}
+.update-time {
+  margin-bottom: 10px;
+}
+.description {
+  font-size: 20px;
+  font-weight: 200;
 }
 
 .appwindow {
@@ -101,6 +122,13 @@ hr {
 .weather-forecast-temperature {
   font-size: 19px;
   color: black;
+}
+.forecast-descrption {
+  opacity: 0.8;
+  font-size: 16px;
+}
+.forecast-descrption::first-letter {
+  text-transform: capitalize;
 }
 .forecast-tempmin {
   opacity: 0.5;

@@ -41,25 +41,37 @@ function formatDay(timestamp) {
 
   return days[day];
 }
-function sunDate(timestamp) {
-  let date = new Date(timestamp);
-
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-}
 
 function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   let forecast = response.data.daily;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 1) {
+      forecastHTML =
+        forecastHTML +
+        `        <div class="col-2"><div class="weather-forecast-part">
+             <div class="weather-forecast-day">Today</div>
+                <img
+                  src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }.png"
+                  alt=""
+                  width="55"
+                />
+                <div class="weather-forecast-temperature">
+                <div class="forecast-descrption"><em>${
+                  forecastDay.weather[0].description
+                }</em></div>
+                  <span class="forecast-tempmax">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span>
+                  <span class="forecast-tempmin">${Math.round(
+                    forecastDay.temp.min
+                  )}°</span>
+                </div></div></div>              
+                        
+          `;
+    } else if (index < 6) {
       forecastHTML =
         forecastHTML +
         `        <div class="col-2"><div class="weather-forecast-part">
@@ -74,6 +86,9 @@ function displayForecast(response) {
                   width="55"
                 />
                 <div class="weather-forecast-temperature">
+                <div class="forecast-descrption"><em>${
+                  forecastDay.weather[0].description
+                }</em></div>
                   <span class="forecast-tempmax">${Math.round(
                     forecastDay.temp.max
                   )}°</span>
@@ -100,6 +115,7 @@ function getForecast(coordinates) {
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
 
   let descriptElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -121,16 +137,16 @@ function displayTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
 
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  sunriseElement.innerHTML = sunDate(response.data.sys.sunrise * 1000);
-  sunsetElement.innerHTML = sunDate(response.data.sys.sunset * 1000);
+
   tempminElement.innerHTML = Math.round(response.data.main.temp_min);
   tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
   windspeedElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = response.data.main.humidity;
   descriptElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
   tempElement.innerHTML = Math.round(response.data.main.temp);
-
+  console.log(response.data);
   getForecast(response.data.coord);
 }
 
