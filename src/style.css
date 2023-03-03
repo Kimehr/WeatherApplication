@@ -109,7 +109,7 @@ a {
 }
 /* ------------------------------------------------------------------------------------------------------- */
 hr {
-  border-top: 1.5px dotted #393e46;
+  border-top: 2px dotted #393e46;
 }
 
 .forecast-title {
@@ -130,10 +130,14 @@ hr {
   margin-top: 5px;
 }
 .weather-forecast-part {
+  height: 100%;
   border: 1px #dbd8e3;
   border-radius: 8%;
-  color: #d0b8a8;
-  backdrop-filter: blur(1px);
+  background: linear-gradient(
+    90deg,
+    rgb(237, 237, 228) 0%,
+    rgb(203, 197, 182) 100%
+  );
 }
 .weather-forecast-day {
   font-size: 22px;
