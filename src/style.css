@@ -44,11 +44,25 @@ li::first-letter {
 .update-time {
   margin-bottom: 10px;
 }
-.description {
-  font-size: 20px;
-  font-weight: 200;
+.wind-speed {
+  margin-bottom: 5px;
 }
-
+.parameter {
+  font-weight: bold;
+}
+.description {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.feel-like {
+  font-size: 18px;
+  text-align: center;
+}
+.weather-icon {
+  width: 500px;
+}
 .appwindow {
   max-width: 900px;
   margin: 30px auto 10px auto;
@@ -62,30 +76,31 @@ li::first-letter {
   margin-bottom: 20px;
 }
 .weather-temperature img {
-  margin-right: 10px;
-  height: 64px;
-  width: 64px;
+  margin-right: 5px;
+  height: 80px;
+  width: 80px;
 }
 .weather-temperature strong {
   color: black;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
+  position: relative;
+  left: 14px;
+  bottom: -10px;
 }
 .weather-temperature .units {
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
-  top: -34px;
+  top: -10px;
+  left: 24px;
 }
 a {
   text-decoration: none;
 }
 .weather-temperature .active {
-  color: black;
-  cursor: default;
-}
-.weather-temperature .active:hover {
-  text-decoration: none;
+  color: #352f44;
+  font-size: 22px;
 }
 
 hr {

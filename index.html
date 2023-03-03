@@ -27,7 +27,7 @@
         <div class="form">
           <form id="cityform">
             <div class="row">
-              <div class="col-4">
+              <div class="col-6">
                 <input
                   type="search"
                   placeholder="Search the city..."
@@ -57,27 +57,42 @@
               <li class="update-time">
                 Last updated at : <span id="date"></span>
               </li>
-              <li id="description" class="description"></li>
+
+              <li>
+                <span class="parameter">Humidity :</span>
+                <span id="humidity"></span> %
+              </li>
+              <li class="wind-speed">
+                <span class="parameter"> Wind :</span>
+                <span id="windspeed"></span> m/s
+              </li>
+              <li>
+                <span class="parameter">H : </span
+                ><span id="temp-max"></span> °C
+              </li>
+              <li>
+                <span class="parameter">L : </span
+                ><span id="temp-min"></span> °C
+              </li>
             </ul>
           </div>
           <div class="col-3">
             <div class="overview">
               <div class="d-flex weather-temperature">
-                <img src="" alt="" id="icon" />
+                <img src="" alt="" id="icon" class="weather-icon" />
                 <div>
                   <strong id="temperature"></strong>
                   <span class="units">
-                    <a href="#" id="celsius-link" class="active">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a>
+                    <span class="active">°C</span>
                   </span>
                 </div>
               </div>
             </div>
             <ul>
-              <li>Humidity : <span id="humidity"></span> %</li>
-              <li>Wind : <span id="windspeed"></span> m/s</li>
-              <li>H : <span id="temp-max"></span> °C</li>
-              <li>L : <span id="temp-min"></span> °C</li>
+              <em> <li id="description" class="description"></li></em>
+              <li class="feel-like">
+                Feels like : <span id="feel-like"></span> °C
+              </li>
             </ul>
           </div>
           <hr class="top-line" />

@@ -20,19 +20,6 @@ function formatDate(timestamp) {
   }
   return `${day} ${hours}:${minutes}`;
 }
-function sunDate(timestamp) {
-  let date = new Date(timestamp);
-
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -118,14 +105,13 @@ function displayTemperature(response) {
   let countryElement = document.querySelector("#country");
 
   let descriptElement = document.querySelector("#description");
+  let feelLikeElement = document.querySelector("#feel-like");
   let humidityElement = document.querySelector("#humidity");
   let windspeedElement = document.querySelector("#windspeed");
   let tempmaxElement = document.querySelector("#temp-max");
   let tempminElement = document.querySelector("#temp-min");
 
   let dateElement = document.querySelector("#date");
-  let sunriseElement = document.querySelector("#sunrise");
-  let sunsetElement = document.querySelector("#sunset");
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -134,19 +120,18 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  celsiusTemperature = Math.round(response.data.main.temp);
-
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   tempminElement.innerHTML = Math.round(response.data.main.temp_min);
   tempmaxElement.innerHTML = Math.round(response.data.main.temp_max);
   windspeedElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = response.data.main.humidity;
+  feelLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   descriptElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   tempElement.innerHTML = Math.round(response.data.main.temp);
-  console.log(response.data);
+
   getForecast(response.data.coord);
 }
 
@@ -160,30 +145,8 @@ function handlesubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(celsiusTemperature);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
 
-let celsiusTemperature = null;
 let form = document.querySelector("#cityform");
 form.addEventListener("submit", handlesubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("London");
