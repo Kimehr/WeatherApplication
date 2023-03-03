@@ -1,3 +1,4 @@
+/* api to current time */
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -20,7 +21,8 @@ function formatDate(timestamp) {
   }
   return `${day} ${hours}:${minutes}`;
 }
-
+/* ------------------------------------------------------------------------------------------------------- */
+/* api to forecast days */
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -28,7 +30,8 @@ function formatDay(timestamp) {
 
   return days[day];
 }
-
+/* ------------------------------------------------------------------------------------------------------- */
+/* Forecast part with api */
 function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   let forecast = response.data.daily;
@@ -98,7 +101,8 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*Displayin temperature of the city and updating all weather parameters by api*/
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -134,7 +138,8 @@ function displayTemperature(response) {
 
   getForecast(response.data.coord);
 }
-
+/* ------------------------------------------------------------------------------------------------------- */
+/* Search the city to get api information */
 function search(city) {
   let apiKey = "4b3503b2f08a729413c4d33ef1186004";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -145,7 +150,7 @@ function handlesubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-
+/* ------------------------------------------------------------------------------------------------------- */
 let form = document.querySelector("#cityform");
 form.addEventListener("submit", handlesubmit);
 
